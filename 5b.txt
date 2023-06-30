@@ -1,0 +1,23 @@
+function getRandomstockprice() { 
+    // generate a random number between -1 and 1(inclusive) 
+    return Math.floor(Math.random() * 3) - 1; } 
+function displayPrice(price) { 
+    console.log("Current price: $" + price.toFixed(2)); 
+}
+function PriceChanges() { 
+    let price = 100; // starting price 
+    const interval = setInterval(() => { 
+        // generate a random price change 
+        const priceChange = getRandomstockprice(); // update the price 
+        price += priceChange; // display the price on the console 
+        displayPrice(price); }, 3000); // invoke the function every 3 seconds 
+    // stop the changes after 30 seconds (10 iterations) 
+    setTimeout(() => { 
+        clearInterval(interval); 
+        console.log("Changes stopped"); 
+        }, 30000); 
+    } 
+
+
+// start the changes of price 
+PriceChanges();

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>length Validation</title>
+  </head>
+  <body>
+    <input type="text" id="txtinput" onkeyup="keypress()" />
+    <div id="msg"></div>
+    <script>
+      keypress = () => {
+        txtvalue = document.getElementById("txtinput").value;
+        if (txtvalue.length <= 4) {
+          document.getElementById("msg").style.color = "red";
+          document.getElementById("msg").innerHTML =
+            "<h4> input must be between 4 and 10 characters </h4>";
+        } else if (txtvalue.length > 10) {
+          document.getElementById("msg").style.color = "red";
+          document.getElementById("msg").innerHTML =
+            "<h4> input must be between 4 and 10 characters </h4>";
+        } else {
+          document.getElementById("msg").style.color = "green";
+          document.getElementById("msg").innerHTML = "<h4> Valid input </h4>";
+        }
+      };
+    </script>
+  </body>
+</html>
